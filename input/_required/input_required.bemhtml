@@ -1,0 +1,5 @@
+block('input').mod('required', true).elem('control').match(!this._required)
+        .attrs()(function() {
+          this._required = true;
+          return this.extend(applyNext(), { required: ''})
+})

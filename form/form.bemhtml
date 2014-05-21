@@ -1,0 +1,22 @@
+block('form')(
+  tag()('form'),
+  attrs()(function(){
+    return {
+      action : this.ctx.action,
+      method: this.ctx.method,
+      enctype: this.ctx.enctype
+    }
+  }),
+  content()(function(){
+    return [
+      {
+        block:'input',
+        mods:{type:'hidden'},
+        name:'formid',
+        val: this.ctx.formid,
+        js: {val: this.ctx.formid}
+      },
+      applyNext()
+    ]
+  })
+)
