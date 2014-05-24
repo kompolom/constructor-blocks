@@ -1,0 +1,10 @@
+block('section').match(!this.ctx._wrapped)(
+  tag()('section'),
+  content()(function(){
+    this.ctx._wrapped = true;
+    return {
+      block:'container',
+      content: applyNext()
+    }
+  })
+)
