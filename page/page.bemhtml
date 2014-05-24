@@ -1,0 +1,8 @@
+block('page')(
+  content()(function(){
+    return {
+        elem:'wrapper',
+        content: this.ctx.content
+      }   
+  })
+)
