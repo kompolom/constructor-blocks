@@ -1,0 +1,12 @@
+block('input').match(this.ctx.icon)(
+  content()(function(){
+    return [
+      {
+        elem:'icon',
+        mix:{block:'icon', mods: {size: this.ctx.mods.size, icon:this.ctx.icon}},
+        tag:'i'
+      },
+      applyNext()
+    ]
+  })
+)

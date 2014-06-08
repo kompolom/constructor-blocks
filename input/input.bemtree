@@ -1,0 +1,13 @@
+block('input')(
+  def()(function(){
+    var data = this.ctx.data;
+    this.ctx.icon = data.icon;
+    this.ctx.placeholder = data.placeholder;
+    this.ctx.mods = {
+      required : data.required,
+      type     : data.type,
+      size     : data.size || 'x'
+    };
+    return applyNext();
+  })
+)
