@@ -1,0 +1,14 @@
+block('counter')(
+  js()({type:this.ctx.mods.type||'date',exp:this.ctx.exp||1}),
+  content()(function(){
+    return [
+      {
+        elem:'text',
+        content:this.ctx.text
+      },
+      {
+        elem:'holder'        
+      }
+    ]
+  })
+)

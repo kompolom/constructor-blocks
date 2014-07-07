@@ -1,0 +1,81 @@
+.counter{
+  position:relative;  
+  margin:  auto;
+  &:after{
+    content:'';
+    display: block;
+    width:100%;
+    clear:both;
+  }
+  &__text{    
+    text-align: center;
+    font: italic 15px $hf;
+    margin:0 0 10px;
+    &:after{
+      content:':';
+    }
+  }
+  &__holder{    
+    text-align: center;
+    position:relative;  
+    font-family: $hf;
+    font-style: italic;
+  }
+  .countDays,
+  .countHours,
+  .countMinutes,
+  .countSeconds{
+    position:relative;
+    font-size: 40px;
+    line-height: 1;
+    width:103px;
+    height:90px;   
+    letter-spacing: -4px;
+    display: block;
+    float: left;
+    padding:20px 0 0;   
+    box-sizing: border-box;
+    
+    &:after{
+      font-size:14px;
+      display:block;
+      width:100%;
+      letter-spacing: 0;
+      margin:  0;
+      font-weight: 400;
+      position: absolute;
+      text-transform: lowercase;
+    }
+  }
+  .countDays{
+    background: #a18876;
+  }
+  .countDays:after{
+    content: 'Дней';
+  }
+  .countHours{
+    background: #917766;
+    &:after{
+      content:'Часов'
+    }
+  }
+  .countMinutes{
+    background: #6f5042;
+    &:after{
+      content:'Минут'
+    }
+  }
+  .countSeconds{
+    background: #b09986;
+    border: 0;
+    &:after{
+      content:'Секунд'
+    }
+  }
+  .position{
+    display:inline;
+  }
+  .digit{
+    display: inline;
+  }
+}
