@@ -1,6 +1,6 @@
 /**
- * @module jquery
- * @description Provide jQuery (load if it does not exist).
+ * @module Modernizr
+ * @description Provide Modernizr (load if it does not exist).
  */
 
 modules.define(
@@ -10,15 +10,10 @@ modules.define(
 
 var url = 'http://yandex.st/modernizr/2.7.1/modernizr.min.js';
 
-function doProvide() {
-    /**
-     * @exports
-     * @type Function
-     */
+function doProvide() {    
     provide(Modernizr);
 }
-
 typeof Modernizr !== 'undefined'?
-    doProvide(true) :
+    doProvide() :
     loader(url, doProvide);
 });
