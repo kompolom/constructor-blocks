@@ -62,9 +62,11 @@ provide(DOM.decl('form', {
               }
             };//error
             if (response.msg){
-              this.echo(response.msg);
-              this.fullFill();
+              this.echo(response.msg);              
             };
+            if (response.status ==='success'){
+              this.fullFill();
+            }
             return true;
           },
     _error: function(){
@@ -74,6 +76,7 @@ provide(DOM.decl('form', {
     
     onSubmit:function(){
       debugger
+      this.emit('submit');
       var form = $(this.domElem[0]);
       var action = form.attr('action');
       var type = form.attr('method') ||'POST';
@@ -114,6 +117,14 @@ provide(DOM.decl('form', {
       this.emit('fullFill');
     },
     _onFullFill:function(){
+      if(this.params.goal){
+        try{
+          debugger
+          window.counter.reachGoal(this.params.goal);
+        }catch(e){
+          console.warn(e);
+        }
+      }
       if (this._allowLock){
         this.lock();
       }
@@ -128,6 +139,13 @@ provide(DOM.decl('form', {
    
 
     
+},{
+  live:function(){
+    this.liveBindTo('submit',function(e){
+       e.preventDefault();
+       this.onSubmit();       
+    });
+  }
 }));
 
 
