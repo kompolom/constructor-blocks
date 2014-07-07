@@ -1,0 +1,6 @@
+modules.define('countdown',['jquery'], function(provide,$) {
+  var jQuery = $;
+  (function(e){function i(t,n){t.addClass("countdownHolder");e.each(["Days","Hours","Minutes","Seconds"],function(e){t.append('<span class="count'+this+'"></span>');t.find("span.count"+this).html('<span class="position">					<span class="digit static">0</span>				</span>				<span class="position">					<span class="digit static">0</span>				</span>');if(this!="Seconds"){t.append('<span class="countDiv countDiv'+e+'"></span>')}})}function s(e,t){var n=e.find(".digit");if(n.is(":animated")){return false}if(e.data("digit")==t){return false}e.data("digit",t);n.html(t);n.animate({opacity:0},200);n.delay(50).animate({opacity:1},200)}var t=24*60*60,n=60*60,r=60;e.fn.countdown=function(o){function d(e,t,n){s(p.eq(e),Math.floor(n/10)%10);s(p.eq(t),n%10)}var u=e.extend({callback:function(){},timestamp:0},o);var a,f,l,c,h,p;i(this,u);p=this.find(".position");(function v(){a=Math.floor((u.timestamp-new Date)/1e3);if(a<0){a=0}f=Math.floor(a/t);d(0,1,f);a-=f*t;l=Math.floor(a/n);d(2,3,l);a-=l*n;c=Math.floor(a/r);d(4,5,c);a-=c*r;h=a;d(6,7,h);u.callback(f,l,c,h);setTimeout(v,1e3)})();return this}})(jQuery)
+provide($);
+
+});
