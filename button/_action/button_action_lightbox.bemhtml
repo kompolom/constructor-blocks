@@ -1,0 +1,12 @@
+block('button').mod('action', 'lightbox')(
+  js()({url: this.ctx.url}),
+  mix()([
+    {
+      block:'lightbox',
+      js:{
+        url: this.ctx.url,
+        config: this.ctx.config || undefined
+      }
+    }
+  ])
+)
