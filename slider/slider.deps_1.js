@@ -1,6 +1,0 @@
-({
-    mustDeps: [
-      {block:'bxslider'}
-    ],
-    shouldDeps: []
-})
