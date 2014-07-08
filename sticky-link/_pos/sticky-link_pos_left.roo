@@ -1,0 +1,9 @@
+.sticky-link_pos_left{
+  left:-32px;
+  top:40%;
+  width:90px;
+  text-align: center;
+  writing-mode: tb-rl;
+  transform: rotate(-90deg);
+  
+}

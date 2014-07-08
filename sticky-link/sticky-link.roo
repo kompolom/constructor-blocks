@@ -1,0 +1,6 @@
+.sticky-link{
+  position:fixed;
+  display:block;
+  z-index: 110;
+  text-decoration: none;
+}
