@@ -8,8 +8,6 @@ provide(DOM.decl('lightbox', {
                 this.config = this.params.config;
                 this.link = this.findBlockOn('link');               
                 this.url = this.params.url || this.link.domElem.attr('href');  
-                
-                this.bindTo('click',this._open,this);
             }
         },
 
@@ -23,9 +21,14 @@ provide(DOM.decl('lightbox', {
       $.fancybox.close();
       this.emit('closed');
     }
-
     
-}));
-
-
+  },{
+    live:function(){
+      this.liveBindTo('click',function(){
+        this._open();      
+      })
+      return false;
+    }
+  } 
+  )); 
 });
