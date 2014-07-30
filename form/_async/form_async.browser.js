@@ -4,12 +4,6 @@ provide(DOM.decl('form', {
     onSetMod : {
         'js' : {
             'inited' : function() {   
-               
-                this.bindTo('submit', function(e) {   
-                    e.preventDefault();
-                    this.onSubmit();
-                    this.emit('submit');
-                });
                 this.on('fullFill',this._onFullFill);
                 this._msg = {block:'msg'};
                 this._errorMsg = this.params.errorMsg || "Очень жаль, но произошла ошибка.";
