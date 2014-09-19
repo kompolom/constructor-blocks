@@ -1,0 +1,9 @@
+.respond{
+  width: 280px;  
+  height: 80px;
+  font: 19px $df;
+  padding: 15px 25px;  
+  text-align: center;
+  display: none;
+  color: #fff;
+}
