@@ -1,6 +1,10 @@
 ({
-    mustDeps: [
-      {block:'waypoints'}
+    mustDeps: [     
     ],
-    shouldDeps: []
+    shouldDeps: [
+      {
+        block: 'functions',
+        elem: 'throttle'
+      }
+    ]
 })
