@@ -1,9 +1,9 @@
-modules.define('i-bem__dom',['jquery','fancybox','BEMHTML'], function(provide,$ , fancybox, BEMHTML, DOM) {
+modules.define('form_async',['jquery','fancybox','BEMHTML','i-bem__dom'], function(provide,$ , fancybox, BEMHTML, DOM) {
 
-provide(DOM.decl('form', {
+provide(DOM.decl({block:'form',modName:'async'}, {
     onSetMod : {
         'js' : {
-            'inited' : function() {   
+            'inited' : function() {
                 this.on('fullFill',this._onFullFill);
                 this._msg = {block:'msg'};
                 this._errorMsg = this.params.errorMsg || "Очень жаль, но произошла ошибка.";
@@ -60,6 +60,9 @@ provide(DOM.decl('form', {
             };
             if (response.status ==='success'){
               this.fullFill();
+            }
+            if(response.redirect){
+              window.location = response.redirect;
             }
             return true;
           },
