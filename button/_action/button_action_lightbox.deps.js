@@ -3,6 +3,6 @@
      
     ],
     shouldDeps: [
-       {block:'poupup'}
+       {block:'lightbox'}
     ]
 })
