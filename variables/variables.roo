@@ -36,8 +36,3 @@ $pmin = 1200px;
     vertical-align:middle;
   }
 }
-
-@keyframes textblock{
-  0% {}
-  100%{}
-}
