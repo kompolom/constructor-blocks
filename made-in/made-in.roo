@@ -1,21 +1,4 @@
 .made-in{
-  position:absolute;
-  width:200px;  
-  box-sizing: border-box;
-  background: $dc;
-  color:#fff;
-  font:16px $df;
-  text-align: center;
-  padding: 3px 10px;
-  left:50%;
-  margin: 0 0 0 -100px;
-  z-index:1;
-  border-radius: 0 0 5px 5px;  
-  &:hover{
-    opacity: .9;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
   &__link{
     color:inherit;
     text-decoration: none;
