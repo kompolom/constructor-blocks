@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Nautilus Pompilius';
+    src: url('nautilus.eot');
+    src: url('nautilus.eot?#iefix') format('embedded-opentype'),
+         url('nautilus.woff') format('woff'),
+         url('nautilus.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
