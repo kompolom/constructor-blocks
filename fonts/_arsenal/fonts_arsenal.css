@@ -1,0 +1,51 @@
+
+@font-face {
+    font-family: 'Arsenal';
+    src: url('arsenal-bold.eot');
+    src: url('arsenal-bold.eot?#iefix') format('embedded-opentype'),
+         url('arsenal-bold.woff') format('woff'),
+         url('arsenal-bold.ttf.gz') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'Arsenal';
+    src: url('arsenal-bolditalic.eot');
+    src: url('arsenal-bolditalic.eot?#iefix') format('embedded-opentype'),
+         url('arsenal-bolditalic.woff') format('woff'),
+         url('arsenal-bolditalic.ttf.gz') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
+
+@font-face {
+    font-family: 'Arsenal';
+    src: url('arsenal-italic.eot');
+    src: url('arsenal-italic.eot?#iefix') format('embedded-opentype'),
+         url('arsenal-italic.woff') format('woff'),
+         url('arsenal-italic.ttf.gz') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+
+
+@font-face {
+    font-family: 'Arsenal';
+    src: url('arsenal-regular.eot');
+    src: url('arsenal-regular.eot?#iefix') format('embedded-opentype'),
+         url('arsenal-regular.woff') format('woff'),
+         url('arsenal-regular.ttf.gz') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
