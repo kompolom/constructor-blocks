@@ -26,8 +26,8 @@ provide(DOM.decl('lightbox', {
     live:function(){
       this.liveBindTo('click',function(){
         this._open();      
+        return false;
       })
-      return false;
     }
   } 
   )); 
