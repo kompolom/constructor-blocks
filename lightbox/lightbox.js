@@ -1,4 +1,4 @@
-modules.define('i-bem__dom',['jquery','fancybox'], function(provide,$ ,fancy, DOM) {
+modules.define('lightbox',['jquery','fancybox','i-bem__dom'], function(provide,$ ,fancy, DOM) {
 
 provide(DOM.decl('lightbox', {
     onSetMod : {
