@@ -5,5 +5,4 @@
   padding: 15px 25px;  
   text-align: center;
   display: none;
-  color: #fff;
 }
