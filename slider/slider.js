@@ -1,4 +1,4 @@
-modules.define('i-bem__dom',['jquery','bxslider'], function(provide,$ ,slider, DOM) {
+modules.define('slider',['jquery','bxslider','i-bem__dom'], function(provide,$ ,slider, DOM) {
 
 provide(DOM.decl('slider', {
     onSetMod : {
