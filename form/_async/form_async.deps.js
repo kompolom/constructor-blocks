@@ -1,5 +1,6 @@
 ({
     mustDeps: [
+      {block:'fancybox'},
        {
         tech: 'bemhtml',
         block:'i-bem',
@@ -19,6 +20,6 @@
     tech: 'js',
     shouldDeps: [
       {block:'input',mods:{type:['hidden'],required:true}},
-      {block:'respond'}
+      {block:'respond'},
     ]
 })
