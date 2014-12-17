@@ -1,6 +1,6 @@
-modules.define('i-bem__dom',['ymaps'], function(provide,ym, DOM) {
+modules.define('map',['ymaps','i-bem__dom'], function(provide,ym, DOM) {
 
-    provide(DOM.decl('map', {
+    provide(DOM.decl({block:'map',modName:'vendor',modVal:'yandex'}, {
         onSetMod : {
             js : {
                 inited : function() {
@@ -14,7 +14,6 @@ modules.define('i-bem__dom',['ymaps'], function(provide,ym, DOM) {
                       var mark = new ym.Placemark(this.params.mark);
                       this.map.geoObjects.add(mark);
                     }
-                    debugger
                     if(this.params.disable){
                       this._disableBehaviors(this.params.disable);
                     }
