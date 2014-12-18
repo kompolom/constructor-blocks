@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Coronet';
+    src: url('coronet.eot');
+    src: url('coronet.eot') format('embedded-opentype'),
+         url('coronet.woff2') format('woff2'),
+         url('coronet.woff') format('woff'),
+         url('coronet.ttf') format('truetype'),
+         url('coronet.svg#CoronetRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
