@@ -40,7 +40,7 @@ provide(BEM.decl('metrica',{
    */
   _initCounter: function(){
     var counterName = 'yaCounter'+this._id;
-    window['counterName'] = this.counter = new Ya.Metrika({
+    window[counterName] = this.counter = new Ya.Metrika({
       id:this._id,
       webvisor:this._webvisor,
       clickmap:this._clickmap,
