@@ -1,6 +1,8 @@
 ({
     mustDeps: [
-      {elem:'wrapper'}
+      {block:'variables'}
     ],
-    shouldDeps: []
+    shouldDeps: [
+      {elem:'wrapper'}
+    ]
 })
