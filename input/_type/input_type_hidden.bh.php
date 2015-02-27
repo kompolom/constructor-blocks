@@ -1,9 +1,13 @@
 <?php
 return function ($bh) {
  $bh->match("input_type_hidden", function ($ctx, $json){
-   return [
-     'tag'=>'input',
-     'attrs'=>['name'=>$ctx->param('name'),'type'=>'hidden', 'value'=> $ctx->param('value')]
-   ];
+   $ctx
+     ->tag('input')
+     ->bem(false)
+     ->attrs([
+       'name'=>$ctx->param('name'),
+       'type'=>'hidden',
+       'value'=> $ctx->param('val')
+   ]);
  });
 };
