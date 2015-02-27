@@ -7,6 +7,7 @@ return function ($bh) {
      ]);
    if ($ctx->param('required')){
     $ctx->tParam('required', 'required');
+    $ctx->applyBase();
    }
  });
 };
