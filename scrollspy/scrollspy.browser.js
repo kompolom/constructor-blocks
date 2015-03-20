@@ -1,4 +1,6 @@
 /* global modules:false */
+/* global window:false */
+
 modules.define('scrollspy',['i-bem__dom','jquery','functions__throttle'], function(provide, DOM, $, throttle) {
 
 provide(DOM.decl('scrollspy', {
@@ -52,17 +54,30 @@ provide(DOM.decl('scrollspy', {
       
       return this.listeners.length-1;
     },
+
+    /**
+     * Calc scroll in/out offset
+     * @returns void
+     */
     _calc_offsets:function(){
       this.height = this.root.height(); 
       this.offset = this._get_offset(this.offset);      
     },
+
+    /**
+     * Delete scroll listener
+     * @param {int} idx listener idx from add_listener func
+     * @returns void
+     */
     del_listener: function(idx){
       delete this.listeners[idx];
       delete this.offsets.top[idx];
       delete this.offsets.bottom[idx];
     },
+
     /**
-     * Рассчитывает отступ
+     * Calc offset in px. Convert strings to int,
+     * percents to px
      * @param {int|string} offset
      * @returns {int} offset in px
      */
@@ -76,16 +91,18 @@ provide(DOM.decl('scrollspy', {
       }
       return offset;
     },
+
+    /**
+     * Выполняется, при каждом скролле
+     * @returns void
+     */
     _onScroll:function(dir){      
       this._scroll = scroll = this.root.scrollTop();
       this._set_direction();
       this._onScrollIn();
       this._oldScroll = this._scroll;      
     },    
-    /**
-     * Выполняется, при каждом скролле
-     * @returns void
-     */
+
     _onScrollIn: function(){
       var top = this._scroll;
       for (var i in this.listeners){
@@ -108,10 +125,21 @@ provide(DOM.decl('scrollspy', {
       }
       
     },
+
+    /**
+     * Calc scroll direction.  
+     * @returns void
+     */
     _set_direction:function(){
       this._isForward = this._oldScroll < this._scroll;
       this.direction = this._isForward ? this._forward : this._backward;
     },
+
+    /**
+     * Activate block in view zone.
+     * @param {object} block BEM block
+     * @returns {bool} result
+     */
     _activate_block: function(block){
       if(block.scrollin){return false}
         block.emit('scrollin');
@@ -119,6 +147,12 @@ provide(DOM.decl('scrollspy', {
         block.setMod('scrollin',true);
         return true;
     },
+
+    /**
+     * Dectivate block outside view zone.
+     * @param {object} block BEM block
+     * @returns {bool} result
+     */
     _deactivate_block: function(block){
       if(!block.scrollin){return false}
         block.emit('scrollout');
@@ -126,10 +160,6 @@ provide(DOM.decl('scrollspy', {
         block.delMod('scrollin');
         return true;
     },
-    
-    
-    
-    
 } 
  ));
 
