@@ -1,0 +1,83 @@
+.counter {
+	position: relative;
+	margin: auto;
+}
+	.counter:after {
+		content: '';
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+	.counter__text {
+		text-align: center;
+		margin: 0 0 10px;
+	}
+		.counter__text:after {
+			content: ':';
+		}
+	.counter__holder {
+		text-align: center;
+		position: relative;
+		font-style: italic;
+	}
+	.counter .countDays,
+	.counter .countHours,
+	.counter .countMinutes,
+	.counter .countSeconds {
+		position: relative;
+		font-size: 40px;
+		line-height: 1;
+		width: 103px;
+		height: 90px;
+		letter-spacing: -4px;
+		display: block;
+		float: left;
+		padding: 20px 0 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+		.counter .countDays:after,
+		.counter .countHours:after,
+		.counter .countMinutes:after,
+		.counter .countSeconds:after {
+			font-size: 14px;
+			display: block;
+			width: 100%;
+			letter-spacing: 0;
+			margin: 0;
+			font-weight: 400;
+			position: absolute;
+			text-transform: lowercase;
+		}
+	.counter .countDays {
+		background: #a18876;
+	}
+	.counter .countDays:after {
+		content: 'Дней';
+	}
+	.counter .countHours {
+		background: #917766;
+	}
+		.counter .countHours:after {
+			content: 'Часов';
+		}
+	.counter .countMinutes {
+		background: #6f5042;
+	}
+		.counter .countMinutes:after {
+			content: 'Минут';
+		}
+	.counter .countSeconds {
+		background: #b09986;
+		border: 0;
+	}
+		.counter .countSeconds:after {
+			content: 'Секунд';
+		}
+	.counter .position {
+		display: inline;
+	}
+	.counter .digit {
+		display: inline;
+	}
