@@ -4,10 +4,10 @@ module.exports = function(bh) {
    ctx
      .tag('input')
      .bem(false)
-     .attrs([
+     .attrs({
        'name':ctx.param('name'),
        'type':'hidden',
        'value': ctx.param('val')
-   ]);
+   });
  });
 }
