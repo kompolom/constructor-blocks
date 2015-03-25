@@ -4,7 +4,7 @@ modules.define('nav-menu_type_anchors',
                ['jquery','i-bem__dom'],
                function(provide, $, BEMDOM) {
 
-provide(BEMDOM.decl({block:'nav-manu', modName: 'type', modVal: 'anchors'},{
+provide(BEMDOM.decl({block:'nav-menu', modName: 'type', modVal: 'anchors'},{
   'onSetMod': {
     'js': {
       'inited': function(){
