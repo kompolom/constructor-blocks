@@ -15,7 +15,7 @@ return function ($bh) {
             'content'=>$item['name']
           ]
         ];
-      },$ctx->param('items'))
+      }, $ctx->param('items'))
      ]);
  });
 };
