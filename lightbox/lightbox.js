@@ -6,14 +6,18 @@ provide(DOM.decl('lightbox', {
             'inited' : function() { 
                 
                 this.config = this.params.config;
-                this.link = this.findBlockOn('link');               
-                this.url = this.params.url || this.link.domElem.attr('href');  
+                this.group = this.domElem.attr('rel');
+                this.url = this.params.url || this.domElem.attr('href');  
             }
         },
 
     },
     _open:function(){     
-      $.fancybox.open(this.url,this.config);
+      if (this.group) {
+        $.fancybox.open($('[rel='+this.group+']'), this.config);
+      } else {
+        $.fancybox.open(this.url, this.config);
+      }
       this.emit('opened');
       return false;
     },
@@ -27,7 +31,7 @@ provide(DOM.decl('lightbox', {
       this.liveBindTo('click',function(){
         this._open();      
         return false;
-      })
+      });
     }
   } 
   )); 
