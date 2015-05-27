@@ -1,28 +1,23 @@
-modules.define('i-bem__dom', function(provide, DOM) {
+modules.define('animate', ['i-bem__dom'], function(provide, BEMDOM) {
 
-provide(DOM.decl('animate', {
+provide(BEMDOM.decl({block: 'animate'}, {
     onSetMod : {
         'js' : {
             'inited' : function() {
                 this._hide = this.params.hide || true; //скрывать блок?
+                this.domElem.addClass('scrollspy');
+                this.ss = this.findBlockOn('scrollspy');
+
+
                 if(this._hide){
                   this.hide();
+                  this.ss.on('scrollin',this.show,this);                  
                 }
-                var ss = this.findBlockOn('scrollspy-listener');
-                if(ss){
-                  this.setMod('state','ready');
-                  this.emit('ready');
-                  ss.on('scrollin',this.start,this);                  
-                  ss.on('scrollout',this.stop,this);                  
-                }else{
-                  this.setMod('state','ready');
-                  this.emit('ready');
-                  ss = this.findBlockOutside('scrollspy');
-                  this.on('scrollin',this.start);
-                  this.on('scrollout',this.stop);
-                  this.idx = ss.add_listener(this);    
-                  
-                }
+
+                this.setMod('state','ready');
+                this.emit('ready');
+                this.ss.on('scrollin',this.start,this);                  
+                this.ss.on('scrollout',this.stop,this);                  
             }
         },
 
